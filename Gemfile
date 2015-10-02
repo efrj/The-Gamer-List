@@ -27,6 +27,8 @@ gem 'activeadmin', github: 'activeadmin/activeadmin', ref: "95127afc924ddac6e183
 gem 'bootstrap-sass'
 gem 'bootstrap-generators'
 gem 'paperclip'
+gem 'tinymce-rails', '4.1.6'
+gem 'tinymce-rails-langs'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

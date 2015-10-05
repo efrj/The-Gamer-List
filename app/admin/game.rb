@@ -34,10 +34,14 @@ ActiveAdmin.register Game do
   show do
     attributes_table do
       row :id
-      row :name
+      row :title
+      row :genre
+      row :softhouse
+      row :platform
       row :image do |course|
         image_tag(course.image.url(:medium))
       end
+      row :description
       row :created_at
       row :updated_at
     end

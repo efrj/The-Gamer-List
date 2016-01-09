@@ -9,8 +9,8 @@ ActiveAdmin.register Game do
     column :title
     column :softhouse
     column :platform
-    column :image do |c|
-      image_tag(c.image.url(:thumb), width: 30) if c.image.present?
+    column :image do |img|
+      image_tag(img.image.url(:thumb), width: 30) if img.image.present?
     end
 
 
@@ -38,8 +38,8 @@ ActiveAdmin.register Game do
       row :genre
       row :softhouse
       row :platform
-      row :image do |course|
-        image_tag(course.image.url(:medium))
+      row :image do |img|
+        image_tag(img.image.url(:medium))
       end
       row :description
       row :created_at

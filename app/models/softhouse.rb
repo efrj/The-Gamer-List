@@ -1,4 +1,5 @@
 class Softhouse < ActiveRecord::Base
+	has_many :game
 
   has_attached_file :image, styles: { medium: "350x260#", thumb: "50x50#" },
                     :url  => "/images/softhouse/:id/:style/:basename.:extension",

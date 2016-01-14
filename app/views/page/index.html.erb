@@ -51,7 +51,7 @@
 <!-- Page Features -->
 <div class="row text-center">
 
-    <% @game.each do |g| %>
+    <% @games.each do |g| %>
         <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
                 <%=image_tag(g.image.url(:medium), width: 350) if g.image.present? %>
@@ -78,7 +78,7 @@
 <!-- Page Features -->
 <div class="row text-center">
 
-    <% @platform.each do |p| %>
+    <% @platforms.each do |p| %>
         <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
                 <%=image_tag(p.image.url(:medium), width: 350) if p.image.present? %>
@@ -105,7 +105,7 @@
 <!-- Page Features -->
 <div class="row text-center">
 
-    <% @softhouse.each do |s| %>
+    <% @softhouses.each do |s| %>
         <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
                 <%=image_tag(s.image.url(:medium), width: 350) if s.image.present? %>

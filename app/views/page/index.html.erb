@@ -1,32 +1,24 @@
+<hr>
 <!-- Header Carousel -->
 <header id="myCarousel" class="carousel slide">
+    
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <% @banners.each do |b| %>
+        <li data-target="#myCarousel" data-slide-to="<%=b.id%>" class="<%='active' if b.id==1%>"></li>
+        <% end %>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-        <div class="item active">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+        <% @banners.each do |b| %>
+        <div class="item<%=' active' if b.id==1%>">
+            <div class="fill" style="background-image:url('<%=b.image%>');"></div>
             <div class="carousel-caption">
-                <h2>Caption 1</h2>
+                <h2><%=b.title%></h2>
             </div>
         </div>
-        <div class="item">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
-            <div class="carousel-caption">
-                <h2>Caption 2</h2>
-            </div>
-        </div>
-        <div class="item">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
-            <div class="carousel-caption">
-                <h2>Caption 3</h2>
-            </div>
-        </div>
+        <% end %>
     </div>
 
     <!-- Controls -->
@@ -37,6 +29,20 @@
         <span class="icon-next"></span>
     </a>
 </header>
+
+<hr>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header"><%=@presentation.title.upcase%></h2>
+    </div>
+    <div class="col-md-6">
+        <p><%=@presentation.content%></p>
+    </div>
+    <div class="col-md-6">
+        <%=image_tag(@presentation.image.url(:medium), class: 'img-responsive') if @presentation.image.present? %>
+    </div>
+</div>
 
 <hr>
 
@@ -120,3 +126,9 @@
 </div>
 <!-- /.row -->
 <hr>
+
+<script>
+$('.carousel').carousel({
+    interval: 5000 //changes the speed
+})
+</script>

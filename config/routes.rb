@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'page#index'
+  
+  get 'about' => 'page#about'
 
   get 'genre/menu' => 'genres#menu'
 

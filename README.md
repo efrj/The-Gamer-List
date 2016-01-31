@@ -1,2 +1,3 @@
-# The-Gamer-List
-A project a simple list of video games.
+# The Gamer List
+This project is a simple website video games.
+

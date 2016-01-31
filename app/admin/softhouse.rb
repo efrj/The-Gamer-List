@@ -1,6 +1,6 @@
 ActiveAdmin.register Softhouse do
 
-  permit_params :name, :image
+  permit_params :name, :image, :description
 
   index do
     selectable_column
@@ -19,6 +19,7 @@ ActiveAdmin.register Softhouse do
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs do
       f.input :name
+      f.input :description
       f.input :image, :as => :file
     end
     f.actions
@@ -31,6 +32,7 @@ ActiveAdmin.register Softhouse do
       row :image do |course|
         image_tag(course.image.url(:medium))
       end
+      row :description
       row :created_at
       row :updated_at
     end

@@ -1,6 +1,6 @@
 ActiveAdmin.register Platform do
 
-  permit_params :name, :image
+  permit_params :name, :image, :description
 
   index do
     selectable_column
@@ -19,6 +19,7 @@ ActiveAdmin.register Platform do
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs do
       f.input :name
+      f.input :description
       f.input :image, :as => :file
     end
     f.actions
@@ -28,6 +29,7 @@ ActiveAdmin.register Platform do
     attributes_table do
       row :id
       row :name
+      row :description
       row :image do |course|
         image_tag(course.image.url(:medium))
       end

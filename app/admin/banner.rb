@@ -20,6 +20,7 @@ ActiveAdmin.register Banner do
       f.input :title
       f.input :description
       f.input :image, :as => :file
+      f.input :link, as: :url, placeholder: 'http://', hint: 'Link to where the banner should point.'
     end
     f.actions
   end
@@ -32,6 +33,7 @@ ActiveAdmin.register Banner do
       row :image do |img|
         image_tag(img.image.url(:thumb))
       end
+      row :link
       row :created_at
       row :updated_at
     end

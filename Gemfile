@@ -28,6 +28,7 @@ gem 'bootstrap-sass'
 gem 'bootstrap-generators'
 gem 'paperclip'
 gem 'valid_url'
+gem 'kaminari'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

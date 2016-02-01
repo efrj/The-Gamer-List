@@ -3,7 +3,7 @@ class Game < ActiveRecord::Base
   belongs_to :softhouse
   belongs_to :platform
 
-  has_attached_file :image, styles: { medium: "350x260#", thumb: "50x50#" },
+  has_attached_file :image, styles: {high: "1140x750#", medium: "900x500#", thumb: "200x150#" },
                     :url  => "/images/game/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/images/game/:id/:style/:basename.:extension"
 

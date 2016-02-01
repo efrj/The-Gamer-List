@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   
   get 'about' => 'page#about'
 
+  get 'games' => 'games#index'
+  get 'game/:id' => 'games#show'
+
   get 'genre/menu' => 'genres#menu'
 
   # Example of regular route:

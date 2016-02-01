@@ -1,13 +1,12 @@
 ActiveAdmin.register Game do
 
 
-  permit_params :title, :description, :genre_id, :softhouse_id, :platform_id, :image
+  permit_params :title, :description, :genre_id, :softhouse_id, :platform_id, :image, :release_year
 
   index do
     selectable_column
     id_column
     column :title
-    column :softhouse
     column :platform
     column :image do |img|
       image_tag(img.image.url(:thumb), width: 30) if img.image.present?
@@ -27,6 +26,7 @@ ActiveAdmin.register Game do
       f.input :platform
       f.input :image, :as => :file
       f.input :description
+      f.input :release_year, as: :datepicker
     end
     f.actions
   end
@@ -42,6 +42,7 @@ ActiveAdmin.register Game do
         image_tag(img.image.url(:medium))
       end
       row :description
+      row :release_year
       row :created_at
       row :updated_at
     end

@@ -112,7 +112,7 @@
         <div class="well">
             <h4><%=@game.genre.name%> Games Related</h4>
             <ul class="list-unstyled widget-list">
-                <% @genresRelated.each do |g| %>
+                <% @genres.each do |g| %>
                 <li><a href="/game/<%=g.id%>"><%=image_tag(g.image.url(:thumb), width: 100) if g.image.present? %><%=g.title%></a></li>
                 <% end %>
             </ul>
@@ -121,7 +121,7 @@
         <div class="well">
             <h4><%=@game.softhouse.name%> Games Related</h4>
             <ul class="list-unstyled widget-list">
-                <% @softhousesRelated.each do |g| %>
+                <% @softhouses.each do |g| %>
                 <li><a href="/game/<%=g.id%>"><%=image_tag(g.image.url(:thumb), width: 100) if g.image.present? %><%=g.title%></a></li>
                 <% end %>
             </ul>
@@ -130,7 +130,7 @@
         <div class="well">
             <h4><%=@game.platform.name%> Games Related</h4>
             <ul class="list-unstyled widget-list">
-                <% @platformsRelated.each do |g| %>
+                <% @platforms.each do |g| %>
                 <li><a href="/game/<%=g.id%>"><%=image_tag(g.image.url(:thumb), width: 100) if g.image.present? %><%=g.title%></a></li>
                 <% end %>
             </ul>

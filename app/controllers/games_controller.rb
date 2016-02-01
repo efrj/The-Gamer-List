@@ -5,8 +5,8 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @genresRelated = Game.where(genre: @game.genre.id).where.not(id: @game.id).first(4)
-    @softhousesRelated = Game.where(softhouse: @game.softhouse.id).where.not(id: @game.id).first(4)
-    @platformsRelated = Game.where(platform: @game.platform.id).where.not(id: @game.id).first(4)
+    @genres = Game.genreRelated(@game.genre.id, @game.id, 4)
+    @softhouses = Game.softhouseRelated(@game.softhouse.id, @game.id, 4)
+    @platforms = Game.platformRelated(@game.platform.id, @game.id, 4)
   end
 end

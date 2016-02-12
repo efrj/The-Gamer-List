@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201022225) do
+ActiveRecord::Schema.define(version: 20160212040432) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -65,9 +65,13 @@ ActiveRecord::Schema.define(version: 20160201022225) do
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
+    t.string   "slug"
   end
 
 # Could not dump table "games" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
+# Could not dump table "generations" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
 
   create_table "genres", force: :cascade do |t|
@@ -79,15 +83,8 @@ ActiveRecord::Schema.define(version: 20160201022225) do
     t.datetime "updated_at",         null: false
   end
 
-  create_table "platforms", force: :cascade do |t|
-    t.string   "name"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.text     "description"
-  end
+# Could not dump table "platforms" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "softhouses", force: :cascade do |t|
     t.string   "name"

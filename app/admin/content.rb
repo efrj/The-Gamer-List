@@ -29,8 +29,9 @@ ActiveAdmin.register Content do
       row :id
       row :title
       row :content
+      row :slug
       row :image do |img|
-        image_tag(img.image.url(:medium))
+        image_tag(img.image.url(:medium)) if img.image.present?
       end
       row :created_at
       row :updated_at

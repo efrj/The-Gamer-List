@@ -50,6 +50,7 @@
 
 <hr>
 
+<% if @games.present?%>
 <!-- Title -->
 <div class="row">
     <div class="col-lg-12">
@@ -72,11 +73,12 @@
             </div>
         </div>
     <% end %>
-
 </div>
 <!-- /.row -->
 <hr>
+<% end %>
 
+<% if @platforms.present?%>
 <!-- Title -->
 <div class="row">
     <div class="col-lg-12">
@@ -103,7 +105,10 @@
 </div>
 <!-- /.row -->
 <hr>
+<% end %>
 
+
+<% if @softhouses.present?%>
 <!-- Title -->
 <div class="row">
     <div class="col-lg-12">
@@ -130,6 +135,7 @@
 </div>
 <!-- /.row -->
 <hr>
+<% end %>
 
 <script>
 $('.carousel').carousel({

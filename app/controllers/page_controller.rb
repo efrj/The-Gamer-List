@@ -3,7 +3,7 @@ class PageController < ApplicationController
     @games = Game.last(4)
     @platforms = Platform.last(4)
     @softhouses = Softhouse.last(4)
-    @presentation = Content.find_by_slug('presentation-index')
+    @presentation = Content.find_by_slug('the-gamer-list')
     @banners = Banner.last(5)
   end
 

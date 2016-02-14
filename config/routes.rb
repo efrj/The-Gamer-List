@@ -9,12 +9,14 @@ Rails.application.routes.draw do
   
   get 'about' => 'page#about'
 
+  get 'genres' => 'genres#index'
+  get 'genre/menu' => 'genres#menu'
+  get 'genre/:id' => 'genres#show'
+
   get 'games' => 'games#index'
   get 'game/:id' => 'games#show'
 
   get 'platforms' => 'platforms#index'
   get 'platform/:id' => 'platforms#show'
-
-  get 'genre/menu' => 'genres#menu'
 
 end

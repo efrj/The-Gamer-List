@@ -6,13 +6,11 @@ ActiveAdmin.register Game do
   index do
     selectable_column
     id_column
+    column :image do |img|
+      image_tag(img.image.url(:thumb), width: 100) if img.image.present?
+    end
     column :title
     column :platform
-    column :image do |img|
-      image_tag(img.image.url(:thumb), width: 30) if img.image.present?
-    end
-
-
     column :created_at
     column :updated_at
     actions

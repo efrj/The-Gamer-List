@@ -1,6 +1,6 @@
 ActiveAdmin.register Platform do
 
-  permit_params :name, :image, :description
+  permit_params :name, :image, :description, :generation_id
 
   index do
     selectable_column
@@ -9,8 +9,6 @@ ActiveAdmin.register Platform do
     column :image do |c|
       image_tag(c.image.url(:thumb), width: 30) if c.image.present?
     end
-
-
     column :created_at
     column :updated_at
     actions
@@ -20,6 +18,7 @@ ActiveAdmin.register Platform do
     f.inputs do
       f.input :name
       f.input :description
+      f.input :generation
       f.input :image, :as => :file
     end
     f.actions
@@ -30,6 +29,7 @@ ActiveAdmin.register Platform do
       row :id
       row :name
       row :description
+      row :generation
       row :image do |course|
         image_tag(course.image.url(:medium))
       end

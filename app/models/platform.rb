@@ -1,4 +1,5 @@
 class Platform < ActiveRecord::Base
+	belongs_to :generation
 	has_many :game
 
   has_attached_file :image, styles: { medium: "350x260#", thumb: "50x50#" },

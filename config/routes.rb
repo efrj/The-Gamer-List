@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   get 'genre/menu' => 'genres#menu'
   get 'genre/:id' => 'genres#show'
 
+  get 'generations' => 'generations#index'
+  get 'generations/menu' => 'generations#menu'
+  get 'generation/:id' => 'generations#show'
+
   get 'games' => 'games#index'
   get 'game/:id' => 'games#show'
 

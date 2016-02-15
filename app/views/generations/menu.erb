@@ -1,0 +1,4 @@
+  <li><a href="/generations" title="All Generations">All Generations</a></li>
+<% @generations.each do |g| %>
+  <li><a href="/generation/<%=g.id%>" title="<%=g.name%>"><%=g.name%></a></li>
+<% end %>

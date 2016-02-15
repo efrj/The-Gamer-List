@@ -67,7 +67,7 @@
             <div class="thumbnail thumbnail-games">
                 <%=image_tag(g.image.url(:medium), width: 350, height: 180) if g.image.present? %>
                 <div class="caption">
-                    <h3><%=g.title%></h3>
+                    <h3><%=g.title%> <small>for <%=g.platform.name%></small></h3>
                     <p><a href="/game/<%=g.id%>" class="btn btn-default">Read More</a></p>
                 </div>
             </div>

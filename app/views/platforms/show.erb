@@ -95,40 +95,11 @@
     <!-- Blog Sidebar Widgets Column -->
     <div class="col-md-4">
 
-        <!-- Blog Categories Well -->
-        <div class="well">
-            <h4>Informations</h4>
-            <ul class="list-unstyled">
-                <li>Genre: <a href="/genre/<%=@game.genre.id%>"><%=@game.genre.name%></a></li>
-                <li>Platform: <a href="/platform/<%=@game.platform.id%>"><%=@game.platform.name%></a></li>
-                <li>Softhouse: <a href="/softhouse/<%=@game.softhouse.id%>"><%=@game.softhouse.name%></a></li>
-                <li>Release Year: <%=@game.release_year%></li>
-            </ul>
-        </div>
-
         <!-- Side Widget Well -->
         <div class="well">
-            <h4><%=@game.genre.name%> Games Related</h4>
+            <h4>Games for <%=@platform.name%></h4>
             <ul class="list-unstyled widget-list">
-                <% @genres.each do |g| %>
-                <li><a href="/game/<%=g.id%>"><%=image_tag(g.image.url(:thumb), width: 100) if g.image.present? %><%=g.title%></a></li>
-                <% end %>
-            </ul>
-        </div>
-
-        <div class="well">
-            <h4><%=@game.softhouse.name%> Games Related</h4>
-            <ul class="list-unstyled widget-list">
-                <% @softhouses.each do |g| %>
-                <li><a href="/game/<%=g.id%>"><%=image_tag(g.image.url(:thumb), width: 100) if g.image.present? %><%=g.title%></a></li>
-                <% end %>
-            </ul>
-        </div>
-
-        <div class="well">
-            <h4><%=@game.platform.name%> Games Related</h4>
-            <ul class="list-unstyled widget-list">
-                <% @platforms.each do |g| %>
+                <% @games.each do |g| %>
                 <li><a href="/game/<%=g.id%>"><%=image_tag(g.image.url(:thumb), width: 100) if g.image.present? %><%=g.title%></a></li>
                 <% end %>
             </ul>

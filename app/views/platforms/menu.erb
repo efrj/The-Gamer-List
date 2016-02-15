@@ -1,0 +1,4 @@
+  <li><a href="/platforms" title="All PLatforms">All Platforms</a></li>
+<% @platforms.each do |p| %>
+  <li><a href="/platform/<%=p.id%>" title="<%=p.name%>"><%=p.name%></a></li>
+<% end %>

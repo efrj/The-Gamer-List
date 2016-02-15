@@ -12,6 +12,17 @@ $(document).ready(function() {
         }
     });
 
+    $.ajax({
+        method: "GET",
+        url: "/platform/menu",
+        success:function(data) {
+            $('#platforms-menu').html(data);
+        },
+        error: function(data) {
+            console.log(data);
+        }
+    });
+
     $('.pagination li').each(function(){
         var pageCurrent = $(this).data('page');
         var classActive = $(this).attr('class');

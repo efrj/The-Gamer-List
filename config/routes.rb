@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'game/:id' => 'games#show'
 
   get 'platforms' => 'platforms#index'
+  get 'platform/menu' => 'platforms#menu'
   get 'platform/:id' => 'platforms#show'
 
 end

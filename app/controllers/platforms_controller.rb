@@ -5,6 +5,12 @@ class PlatformsController < ApplicationController
 
   def show
     @platform = Platform.find(params[:id])
+    @games = Game.where(platform: @platform.id).order("RANDOM()").last(10)
+  end
+
+  def menu
+  	@platforms = Platform.all
+  	render :layout => false
   end
 
 end

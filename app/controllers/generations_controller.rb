@@ -5,7 +5,7 @@ class GenerationsController < ApplicationController
 
   def show
     @generation = Generation.find(params[:id])
-    @platforms = Platform.where(generation: @generation.id).order("RANDOM()")
+    @platforms = Platform.where(generation: @generation.id).order("name ASC")
   end
 
   def menu

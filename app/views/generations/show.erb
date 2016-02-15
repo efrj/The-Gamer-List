@@ -95,7 +95,7 @@
             <h4>Platforms for <%=@generation.name%></h4>
             <ul class="list-unstyled widget-list">
                 <% @platforms.each do |p| %>
-                <li><a href="/generation/<%=p.id%>"><%=p.name%></a></li>
+                <li><a href="/generation/<%=p.id%>"><%=image_tag(p.image.url(:thumb), width: 100) if p.image.present? %><%=p.name%></a></li>
                 <% end %>
             </ul>
         </div>

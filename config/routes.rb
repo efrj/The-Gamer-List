@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   get 'platform/menu' => 'platforms#menu'
   get 'platform/:id' => 'platforms#show'
 
+  get 'softhouses' => 'softhouses#index'
+  get 'softhouse/:id' => 'softhouses#show'
+
 end

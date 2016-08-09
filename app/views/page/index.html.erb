@@ -1,148 +1,134 @@
 <hr>
-<!-- Header Carousel -->
 <header id="myCarousel" class="carousel slide">
-    
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <% @banners.each do |b| %>
-        <li data-target="#myCarousel" data-slide-to="<%=b.id%>" class="<%='active' if b.id==1%>"></li>
-        <% end %>
-    </ol>
+  <ol class="carousel-indicators">
+    <% @banners.each do |b| %>
+    <li data-target="#myCarousel" data-slide-to="<%=b.id%>" class="<%='active' if b.id==1%>"></li>
+    <% end %>
+  </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-        <% @banners.each do |b| %>
-        <div class="item<%=' active' if b.id==1%>">
-            <div class="fill" style="background-image:url('<%=b.image%>');"></div>
-            <div class="carousel-caption">
-                <% if b.link.present? %>
-                <h2><a href="<%=b.link%>"><%=b.title%></a></h2>
-                <% else %>
-                <h2><%=b.title%></h2>
-                <% end %>
-            </div>
-        </div>
+  <div class="carousel-inner">
+    <% @banners.each do |b| %>
+    <div class="item<%=' active' if b.id==1%>">
+      <div class="fill" style="background-image:url('<%=b.image%>');"></div>
+      <div class="carousel-caption">
+        <% if b.link.present? %>
+        <h2><a href="<%=b.link%>"><%=b.title%></a></h2>
+        <% else %>
+        <h2><%=b.title%></h2>
         <% end %>
+      </div>
     </div>
+    <% end %>
+  </div>
 
-    <!-- Controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="icon-prev"></span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="icon-next"></span>
-    </a>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
 </header>
 
 <hr>
 
 <div class="row">
-    <div class="col-lg-12">
-        <h2 class="page-header"><%=@presentation.title.upcase%></h2>
-    </div>
-    <div class="col-md-6">
-        <p><%=@presentation.content%></p>
-    </div>
-    <div class="col-md-6">
-        <%=image_tag(@presentation.image.url(:medium), class: 'img-responsive') if @presentation.image.present? %>
-    </div>
+  <div class="col-lg-12">
+    <h2 class="page-header"><%=@presentation.title.upcase%></h2>
+  </div>
+  <div class="col-md-6">
+    <p><%=@presentation.content%></p>
+  </div>
+  <div class="col-md-6">
+    <%=image_tag(@presentation.image.url(:medium), class: 'img-responsive') if @presentation.image.present? %>
+  </div>
 </div>
 
 <hr>
 
 <% if @games.present?%>
-<!-- Title -->
 <div class="row">
-    <div class="col-lg-12">
-        <h3>Recently Published Games</h3>
-    </div>
+  <div class="col-lg-12">
+    <h3>Recently Published Games</h3>
+  </div>
 </div>
-<!-- /.row -->
 
-<!-- Page Features -->
 <div class="row text-center">
-    <% @games.each do |g| %>
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail thumbnail-games">
-                <%=image_tag(g.image.url(:medium), width: 350, height: 180) if g.image.present? %>
-                <div class="caption">
-                    <h3><%=g.title%> <small>for <%=g.platform.name%></small></h3>
-                    <p><a href="/game/<%=g.id%>" class="btn btn-default">Read More</a></p>
-                </div>
-            </div>
+  <% @games.each do |g| %>
+    <div class="col-md-3 col-sm-6 hero-feature">
+      <div class="thumbnail thumbnail-games">
+        <%=image_tag(g.image.url(:medium), width: 350, height: 180) if g.image.present? %>
+        <div class="caption">
+          <h3><%=g.title%> <small>for <%=g.platform.name%></small></h3>
+          <p><a href="/game/<%=g.id%>" class="btn btn-default">Read More</a></p>
         </div>
-    <% end %>
-    <div class="col-md-12">
-        <a href="/games" class="btn btn-primary">All games</a>
+      </div>
     </div>
+  <% end %>
+  <div class="col-md-12">
+    <a href="/games" class="btn btn-primary">All games</a>
+  </div>
 </div>
-<!-- /.row -->
+
 <hr>
 <% end %>
 
 <% if @platforms.present?%>
-<!-- Title -->
-<div class="row">
-    <div class="col-lg-12">
-        <h3>Recently Published Platform</h3>
-    </div>
-</div>
-<!-- /.row -->
 
-<!-- Page Features -->
-<div class="row text-center">
-    <% @platforms.each do |p| %>
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail thumbnail-games">
-                <%=image_tag(p.image.url(:medium), width: 350) if p.image.present? %>
-                <div class="caption">
-                    <h3><%=p.name%></h3>
-                    <p><a href="/platform/<%=p.id%>" class="btn btn-default">More Info</a></p>
-                </div>
-            </div>
-        </div>
-    <% end %>
-    <div class="col-md-12">
-        <a href="/platforms" class="btn btn-primary">All platforms</a>
-    </div>
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Recently Published Platform</h3>
+  </div>
 </div>
-<!-- /.row -->
+
+<div class="row text-center">
+  <% @platforms.each do |p| %>
+    <div class="col-md-3 col-sm-6 hero-feature">
+      <div class="thumbnail thumbnail-games">
+        <%=image_tag(p.image.url(:medium), width: 350) if p.image.present? %>
+        <div class="caption">
+          <h3><%=p.name%></h3>
+          <p><a href="/platform/<%=p.id%>" class="btn btn-default">More Info</a></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="col-md-12">
+    <a href="/platforms" class="btn btn-primary">All platforms</a>
+  </div>
+</div>
 <hr>
+
 <% end %>
 
 
 <% if @softhouses.present?%>
-<!-- Title -->
 <div class="row">
-    <div class="col-lg-12">
-        <h3>Recently Published Softhouse</h3>
-    </div>
+  <div class="col-lg-12">
+    <h3>Recently Published Softhouse</h3>
+  </div>
 </div>
-<!-- /.row -->
 
-<!-- Page Features -->
 <div class="row text-center">
-    <% @softhouses.each do |s| %>
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail thumbnail-games">
-                <%=image_tag(s.image.url(:medium), width: 350) if s.image.present? %>
-                <div class="caption">
-                    <h3><%=s.name%></h3>
-                    <p><a href="/softhouse/<%=s.id%>" class="btn btn-default">More Info</a></p>
-                </div>
-            </div>
+  <% @softhouses.each do |s| %>
+    <div class="col-md-3 col-sm-6 hero-feature">
+      <div class="thumbnail thumbnail-games">
+        <%=image_tag(s.image.url(:medium), width: 350) if s.image.present? %>
+        <div class="caption">
+          <h3><%=s.name%></h3>
+          <p><a href="/softhouse/<%=s.id%>" class="btn btn-default">More Info</a></p>
         </div>
-    <% end %>
-    <div class="col-md-12">
-        <a href="/softhouses" class="btn btn-primary">All softhouses</a>
+      </div>
     </div>
+  <% end %>
+  <div class="col-md-12">
+    <a href="/softhouses" class="btn btn-primary">All softhouses</a>
+  </div>
 </div>
-<!-- /.row -->
 <hr>
 <% end %>
 
 <script>
 $('.carousel').carousel({
-    interval: 5000 //changes the speed
+  interval: 5000 //changes the speed
 })
 </script>

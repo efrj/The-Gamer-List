@@ -6,8 +6,8 @@ This is a project of a video gaming website developed with Ruby on Rails.
 
 ---
 
-##Functions
-Initially the website will have the following features:
+## Functions
+#### Initially the website will have the following features:
 * ages and stages of games
 * games categories
 * register platforms (consoles and arcades)

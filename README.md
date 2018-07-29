@@ -20,7 +20,7 @@ To develop the administrative panel of the site was used [Activeadmin](http://ac
 
 ### Screenshots of project
 #### Homepage
-![Homepage](https://cloud.githubusercontent.com/assets/833439/13252586/4ddd89aa-da16-11e5-9adf-e07f6147db3d.png)
+<img align="left" src="https://cloud.githubusercontent.com/assets/833439/13252586/4ddd89aa-da16-11e5-9adf-e07f6147db3d.png" width="250" alt="Homepage">
 
 #### Screenshot administrative area of the game registration.
-![alt](https://cloud.githubusercontent.com/assets/833439/13038533/40fa18ee-d37b-11e5-9427-fbd49a8eb13c.png "Admin Games Registration")
+<img align="left" src="https://cloud.githubusercontent.com/assets/833439/13038533/40fa18ee-d37b-11e5-9427-fbd49a8eb13c.png" width="250" alt="Admin Games Registration">

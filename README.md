@@ -1,4 +1,4 @@
-# The Gamer List
+# THE GAMER LIST
 
 ![alt text](https://cloud.githubusercontent.com/assets/833439/13031740/e73a5020-d2bd-11e5-8bcd-be8668a83a3e.png "Logo")
 

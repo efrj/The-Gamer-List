@@ -16,7 +16,7 @@
 !/log/.keep
 /tmp
 
-/public/images/*
+# /public/images/*
 
 /Gemfile.lock
 Gemfile.lock

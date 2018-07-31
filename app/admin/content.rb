@@ -6,8 +6,8 @@ ActiveAdmin.register Content do
     selectable_column
     id_column
     column :title
-    column :image do |img|
-      image_tag(img.image.url(:thumb), width: 30) if img.image.present?
+    column :image do |image|
+      image_tag(image.image, width: 80) if image.present?
     end
 
     column :created_at
@@ -19,7 +19,10 @@ ActiveAdmin.register Content do
     f.inputs do
       f.input :title
       f.input :content
-      f.input :image, :as => :file
+      # f.input :image, :as => :file
+      f.inputs :multipart => true do 
+        f.input :image, :as => :file, :hint => image_tag(f.object.image, width: 200) if f.object.image?
+      end
     end
     f.actions
   end
@@ -30,8 +33,8 @@ ActiveAdmin.register Content do
       row :title
       row :content
       row :slug
-      row :image do |img|
-        image_tag(img.image.url(:medium)) if img.image.present?
+      row :image do |image|
+        image_tag(image.image, width: 200) if image.image.present?
       end
       row :created_at
       row :updated_at

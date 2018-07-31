@@ -39,7 +39,7 @@
     <p><%=@presentation.content%></p>
   </div>
   <div class="col-md-6">
-    <%=image_tag(@presentation.image.url(:medium), class: 'img-responsive') if @presentation.image.present? %>
+    <%=image_tag(@presentation.image.thumb.url, class: 'img-responsive', width: '100%') if @presentation.image.present? %>
   </div>
 </div>
 

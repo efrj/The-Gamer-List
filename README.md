@@ -18,7 +18,7 @@ This is a project of a video gaming website developed with Ruby on Rails.
 ### Administrative panel
 To develop the administrative panel of the site was used [Activeadmin](http://activeadmin.info/). This is a plugin to generate an admin interface.
 
-### Screenshots of project 
+### Some screenshots of the project 
 
 Page | Screenshot
 --- | ---

@@ -27,9 +27,10 @@ gem 'activeadmin'
 gem "active_material", github: "vigetlabs/active_material"
 gem 'bootstrap-sass'
 gem 'bootstrap-generators'
-gem 'paperclip'
 gem 'valid_url'
 gem 'kaminari'
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

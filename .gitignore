@@ -27,7 +27,7 @@ config/database.yml
 /db/schema.rb
 db/schema.rb
 
-/app/uploaders/
-app/uploaders/
-/app/uploaders
-app/uploaders
+/public/uploaders/
+public/uploaders/
+/public/uploaders
+public/uploaders

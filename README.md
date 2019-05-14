@@ -14,6 +14,7 @@ This is a project of a video gaming website developed with Ruby on Rails.
 * softhouses registration developers of games
 * games register
 * content management
+* generation of pages in pdf format
 
 ### Administrative panel
 To develop the administrative panel of the site was used [Activeadmin](http://activeadmin.info/). This is a plugin to generate an admin interface.

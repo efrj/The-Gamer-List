@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # You can have the root of your site routed with "root"
   root 'page#index'
   
   get 'about' => 'page#about'
@@ -26,5 +24,4 @@ Rails.application.routes.draw do
 
   get 'softhouses' => 'softhouses#index'
   get 'softhouse/:id' => 'softhouses#show'
-
 end

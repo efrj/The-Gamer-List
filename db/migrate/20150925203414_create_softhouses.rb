@@ -1,4 +1,4 @@
-class CreateSofthouses < ActiveRecord::Migration
+class CreateSofthouses < ActiveRecord::Migration[5.2]
   def change
     create_table :softhouses do |t|
       t.string :name

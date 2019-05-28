@@ -8,17 +8,17 @@ class Content < ActiveRecord::Base
   # validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   # validates_attachment_size :image, less_than: 2.megabytes
 
-  mount_uploader :image, ImageUploader
+  # mount_uploader :image, ImageUploader
 
-  validates_processing_of :image
-  validate :image_size_validation
+  # validates_processing_of :image
+  # validate :image_size_validation
    
   private
     def image_size_validation
       errors[:image] << "should be less than 5000KB" if image.size > 5.5.megabytes
     end
 
-  def saveSlug
+  def save_slug
     @slug = self.title
       .gsub(' ','-')
       .gsub('_','-')

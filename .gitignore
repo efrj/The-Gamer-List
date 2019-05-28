@@ -31,3 +31,6 @@ db/schema.rb
 public/uploaders/
 /public/uploaders
 public/uploaders
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key

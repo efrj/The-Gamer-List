@@ -1,5 +1,5 @@
 class Content < ActiveRecord::Base
-  after_save :saveSlug
+  after_save :save_slug
 
   # has_attached_file :image, styles: { medium: "700x450#", thumb: "250x150#" },
   #                   :url  => "/images/content/:id/:style/:basename.:extension",

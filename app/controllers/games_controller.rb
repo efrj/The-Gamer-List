@@ -5,8 +5,8 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @genres = Game.genreRelated(@game.genre.id, @game.id, 4)
-    @softhouses = Game.softhouseRelated(@game.softhouse.id, @game.id, 4)
-    @platforms = Game.platformRelated(@game.platform.id, @game.id, 4)
+    @genres = Game.genre_related(@game.genre.id, @game.id, 4)
+    @softhouses = Game.softhouse_related(@game.softhouse.id, @game.id, 4)
+    @platforms = Game.platform_related(@game.platform.id, @game.id, 4)
   end
 end

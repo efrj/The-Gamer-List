@@ -10,15 +10,15 @@ class Game < ActiveRecord::Base
   # validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   # validates_attachment_size :image, less_than: 2.megabytes
 
-  def self.genreRelated genre, game, amount
+  def self.genre_related genre, game, amount
     Game.where(genre: genre).where.not(id: game).first(amount)
   end
 
-  def self.softhouseRelated softhouse,game, amount
+  def self.softhouse_related softhouse,game, amount
     Game.where(softhouse: softhouse).where.not(id: game).first(amount)
   end
 
-  def self.platformRelated platform, game, amount
+  def self.platform_related platform, game, amount
     Game.where(platform: platform).where.not(id: game).first(amount)
   end
 end

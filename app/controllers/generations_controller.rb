@@ -9,8 +9,7 @@ class GenerationsController < ApplicationController
   end
 
   def menu
-  	@generations = Generation.all
-  	render :layout => false
+    @generations = Generation.all
+    render :layout => false
   end
-
 end

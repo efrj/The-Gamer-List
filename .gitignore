@@ -18,14 +18,8 @@
 
 # /public/images/*
 
-/Gemfile.lock
-Gemfile.lock
-
 /config/database.yml
 config/database.yml
-
-/db/schema.rb
-db/schema.rb
 
 /public/uploaders/
 public/uploaders/

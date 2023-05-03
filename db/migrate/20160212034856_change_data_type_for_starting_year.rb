@@ -1,12 +1,14 @@
-class ChangeDataTypeForStartingYear < ActiveRecord::Migration[5.2]
-  def self.up
-    change_table :generations do |t|
-      t.change :starting_year, :year
-    end
+class ChangeDataTypeForStartingYear < ActiveRecord::Migration[7.0]
+  def up
+    execute <<-SQL
+      ALTER TABLE generations
+      ALTER COLUMN starting_year
+      TYPE integer
+      USING EXTRACT(YEAR FROM starting_year)::integer;
+    SQL
   end
-  def self.down
-    change_table :generations do |t|
-      t.change :starting_year, :date
-    end
+
+  def down
+    change_column :generations, :starting_year, :date
   end
 end
